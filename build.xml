@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="APP" default="zip" basedir=".">
+
+	<property name="project-name" value="${ant.project.name}" />
+	<property name="folder-to-zip" value="${basedir}/src/main/resources" />
+	<property name="unzip-destination" value="${basedir}/target" />
+
+	<target name="clean">
+		<delete file="*.zip" />
+		<delete dir="${unzip-destination}" />
+	</target>
+
+	<target name="zip" depends="clean">
+		<zip destfile="${basedir}/target/${project-name}.zip" basedir="${folder-to-zip}"  />
+	</target>
+
+</project>
